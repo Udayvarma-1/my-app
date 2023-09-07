@@ -1,0 +1,29 @@
+.parent{
+    width: 100vw ;
+    height:100vh ;
+    background-color: palevioletred ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child{
+    width: 400px ;
+    height:400px ;
+    background-color: yellow;   
+    border-radius: 20px;
+}
+label{
+    width: 130px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+input{
+    width: 180px;
+    height: 40px;
+    border-radius: 10px;
+}
+button{
+    width: 150px;
+    margin-left: 150px;
+
+}

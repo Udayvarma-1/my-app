@@ -1,0 +1,20 @@
+
+
+.parent{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+}
+.child{
+     width: 400px;
+    height: 400p[x];
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: violet;
+}
+

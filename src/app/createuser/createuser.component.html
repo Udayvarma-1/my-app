@@ -1,0 +1,26 @@
+
+<form [formGroup]="userForm" >
+    <div class="parent">
+        <div class="child">
+            <label>Name:</label>
+            <input type="text" formControlName="name">
+            <br><br>
+            <label>Phone:</label>
+            <input type="text" formControlName="phone">
+            <br><br>
+            <label>City:</label>
+            <input type="text" formControlName="city">
+            <br><br>
+            <label>Fee:</label>
+            <input type="text" formControlName="fee">
+            <br><br>
+            <label>ID:</label>
+            <input type="text" formControlName="id">
+            <br><br>
+
+            <button class="btn btn-primary" (click)="Submit()">Submit</button>
+
+
+        </div>
+    </div>
+</form>

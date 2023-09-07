@@ -1,0 +1,45 @@
+<p>dashboard works!</p>
+<div class="parent">
+    <div class="child">
+        <div class="left">
+            <h1>My Website</h1>
+            <hr>
+            <h3 routerLink="home">Home</h3>
+            <h3 routerLink="about">About</h3>
+            <h3 routerLink="data-binding">Data-Binding</h3>
+            <h3 routerLink="calculator">Calculator</h3>
+            <h3 routerLink="rectangle">Rectangle</h3>
+            <h3 routerLink="bmi">BMI</h3>
+            <h3 routerLink="directives">Directives</h3>
+            <h3 routerLink="table">Table</h3>
+            <h3 routerLink="pipes">Pipes</h3>
+            <h3 routerLink='grade'>GRADE</h3>
+            <h3 routerLink="dice">DICE</h3>
+            <h3 routerLink="bank">BANK</h3>
+            <h3 routerLink="users">USERS</h3>
+            <h3 routerLink="vehicles">VEHICLES</h3>
+            <h3 routerLink="accounts">ACCOUNTS</h3>
+            <h3 routerLink="practice">PRACTICE</h3>
+            <h3 routerLink="flipkart">FLIPKART</h3>
+            <h3 routerLink="email">EMAIL</h3>
+            <h3 routerLink="photos">PHOTOS</h3>
+            <h3 routerLink="boredom">BOREDOM</h3>
+            <h3 routerLink="books">BOOKS</h3>
+            <h3 routerLink="createvehicle">CREATE VEHICLE</h3>
+            <h3 routerLink="createuser">CREATE USERS</h3>
+            <h3 routerLink="creataccount">CREATE ACCOUNTS</h3>
+            
+            <hr>
+            <div class="lg">
+                <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="right">
+            <router-outlet></router-outlet>
+
+        </div>
+
+
+    </div>
+
+</div>

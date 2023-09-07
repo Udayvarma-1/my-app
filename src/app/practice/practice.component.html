@@ -1,0 +1,50 @@
+<p>practice works!</p>
+
+<input type="text" [(ngModel)]="search" (keypress)="getfilteredPractice()">
+
+<label>column:</label>
+<select [(ngModel)]="column">
+    <option>API</option>
+    <option>Description</option>
+    <option>HTTPS</option>
+</select>
+
+<label>order:</label>
+<select [(ngModel)]="order">
+    <option>asc</option>
+    <option>desc</option>
+   
+</select>
+<button (click)="getSortedPractice()">SORT</button>
+
+<table class="table table-primery table-bordered">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>API</th>
+            <th>Description</th>
+            <th>Auth</th>
+            <th>HTTPS</th>
+            <th>Cors</th>
+            <th>Link</th>
+            <th>Category</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let practice of practice; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{practice.API}}</td>
+            <td>{{practice.Description}}</td>
+            <td>{{practice.Auth}}</td>
+            <td>{{practice.HTTPS}}</td>
+            <td>{{practice.CORS}}</td>
+            <td>{{practice.Link}}</td>
+            <td>{{practice.Category}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="delete(i)">delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

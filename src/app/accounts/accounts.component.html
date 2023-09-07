@@ -1,0 +1,65 @@
+<p>accounts works!</p>
+
+<input type="text" [(ngModel)]="search" (keypress)="getfilteredaccounts()">
+
+<label>column:</label>
+<select [(ngModel)]="column">
+    <option>available_balance</option>
+    <option> account_number</option>
+</select>
+<select [(ngModel)]="order">
+    <option>asc</option>
+    <option>desc</option>
+</select>
+<button (click)="getSortaccounts()">SORT</button>
+
+<label>limit:</label>
+<select [(ngModel)]="limit">
+    <option>3</option>
+     <option>5</option>
+      <option>7</option>
+</select>
+
+<label>page:</label>
+<select [(ngModel)]="page">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+</select>
+
+<button (click)="getpaginationaccounts()">pagination</button>
+
+<table class="table table-primary table-bordered">
+    <thead >
+        <tr>
+            <th>S.NO</th>
+            <th>account_name</th>
+            <th>available_balance</th>
+            <th>account_number</th>
+            <th>city</th>
+            <th>profie_picture</th>
+            <th>id</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let account of accounts;let i = index">
+            <td>{{ i + 1}}</td>
+            <td>{{account.account_name}}</td>
+            <td>{{account.available_balance}}</td>
+            <td>{{account. account_number}}</td>
+            <td>{{account.city}}</td>
+            <td>
+                <img src="{{account.profie_picture}}" width="100px" height="100px" alt="">
+            </td>
+            <td>{{account.id}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteaccounts(account.id)">delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

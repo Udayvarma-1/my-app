@@ -1,0 +1,27 @@
+.parent{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+     background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+
+}
+.child{
+    width: 300px;
+    height: 400px;
+    background-color: ghostwhite;
+    border: 1px solid red;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px;
+
+}
+#des{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 300px;  
+}
+img{
+    margin-left: 80px;
+}

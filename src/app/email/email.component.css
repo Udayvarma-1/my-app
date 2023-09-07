@@ -1,0 +1,17 @@
+.parent{
+    display: flex;
+    flex-direction: column;  
+    flex-wrap: nowrap;background-color: rgb(195, 205, 50);
+
+}
+.child{
+    display: flex;
+    margin-left: 10px;
+    border: 2px solid;
+}
+.details{
+    margin-left: 10px;
+    border: 1px;
+    color: chocolate;
+
+}

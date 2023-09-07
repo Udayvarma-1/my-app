@@ -1,0 +1,15 @@
+<form [formGroup]="loginForm">
+    <div class="parent">
+        <div class="child">
+            <h1>LOGIN</h1>
+            <div class="top1">
+                <input type="email" autofocus id="name" placeholder="Email" formControlName="email">
+                <br><br>
+                <input type="password" id="num" placeholder="Password" formControlName="password">
+            </div>
+            <div class="bu">
+                <button (click)="login()">Login</button>
+            </div>
+        </div>
+    </div>
+</form>

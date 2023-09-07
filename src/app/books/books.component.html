@@ -1,0 +1,40 @@
+<div class="parent"  *ngFor="let book of books">
+    <div class="child">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <h1>{{book.data.author}}</h1>
+                <p>{{book.data.birthday}}</p>
+                <p>{{book.data.birthPlace}}</p>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <button class="btn btn-warning">Add New Book</button>
+                <br>
+                <br>
+                <button >Sort By Title</button><br><br>
+                <button>Sort By Published Date</button>
+
+            </div>
+
+        </div>
+
+        <div class="middle">
+            <div class="m1" *ngFor="let a of book.data.books">
+                <select name="Action">
+                    <option>Edit</option>
+                    <option>Delete</option>
+                    <option selected>Action</option>
+                </select>
+                <img src="{{a.imageUrl}}" width="250px" height="150px">
+                <h4>{{a.title}}</h4>
+                <h4>{{a.PublishDate}}</h4>
+                <a id="A" href="{{a.purchaseLink}}" class="btn btn-primary"> BUY BOOK</a>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,14 @@
+
+<div class="parent" >
+    <div class="child" *ngFor="let a of flipkart">
+        <img src="{{a.image}}" alt="" width="100px" height="100px">
+        <!-- <p>Id:{{a.id}}</p> -->
+        <p>Title:{{a.title}}</p>
+        <p>Price:{{a.price}}</p>
+        <p id="des">Description:{{a.description}}</p>
+        <p>Category:{{a.category}}</p>
+        <p>Rating:</p>
+        <p>rate:{{a.rating.rate}}*</p>
+        <p>Count:{{a.rating.count}}</p>
+    </div>
+</div>

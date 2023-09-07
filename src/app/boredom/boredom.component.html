@@ -1,0 +1,12 @@
+<div class="parent">
+    <div class="child" *ngFor="let a of boredom">
+        <h5>Activity:{{a.activity}}</h5>
+        <h4>Type:{{a.type}}</h4>
+        <h4>Praticipants:{{a.praticipants}}</h4>
+        <h4>Price:{{a.price}}</h4>
+        <h4>Link{{a.link}}</h4>
+        <h4>Key:{{a.key}}</h4>
+        <h4>Accessibility:{{a.accessibility}}</h4>
+        <button (click)="Reload()">Reload</button>
+    </div>
+</div>

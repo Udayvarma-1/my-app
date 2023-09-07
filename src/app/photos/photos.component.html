@@ -1,0 +1,15 @@
+<div class="parent">
+    <div class="child" *ngFor="let photo of photos">
+        <!-- <p>ID:{{photo.id}}</p> -->
+        <div id="img">
+            <img src="{{photo.url}}" alt="" width="200px" height="200px">
+        </div>
+        <div class="details">
+            <p>Name:{{photo.name}}</p>
+            <p>Width:{{photo.width}}</p>
+            <p>Height:{{photo.height}}</p>
+            <p>BOXCOUNT:{{photo.box_count}}</p>
+            <p>Captions:{{photo.captions}}</p>
+        </div>
+    </div>
+</div>

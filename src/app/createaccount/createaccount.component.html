@@ -1,0 +1,19 @@
+<form [formGroup]="accountForm">
+    <div class="parent">
+        <div class="child">
+            <label for="same">AccountName:</label>
+            <input type="text" formControlName="account_name" id="same" autofocus >
+            <br><br>
+            <label>AvailableBalance:</label>
+            <input type="number" formControlName="available_balance" ><br><br>
+            <label>AccountNumber:</label>
+            <input type="number" formControlName="account_number"><br><br>
+            <label>City:</label>
+            <input type="text" formControlName="city" >
+            <br><br>
+
+            <button class="btn btn-primary" (click)="Submit()">Submit</button>
+
+        </div>
+    </div>
+</form>

@@ -1,0 +1,58 @@
+<p>users works!</p>
+
+<input type="text" [(ngModel)]="search" (keypress)="getfilteredUsers()">
+
+<label>column:</label>
+<select [(ngModel)]="column">
+    <option>name</option>
+    <option>phone</option>
+    <option>fee</option>
+</select>
+
+<label>order:</label>
+<select [(ngModel)]="order">
+    <option>asc</option>
+    <option>desc</option>
+</select>
+<button (click)="getSortedUsers()">SORT</button>
+
+<label>limit:</label>
+<select [(ngModel)]="limit">
+    <option>3</option>
+    <option>5</option>
+    <option>6</option>
+</select>
+
+<label>page:</label>
+<select [(ngModel)]="page">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+</select>
+<button (click)="getpagedUsers()">pagition</button>
+
+<table class="table table-dark table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Fee</th>
+            <th>Id</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.city}}</td>
+            <td>{{user.fee}}</td>
+            <td>{{user.id}}</td>
+            <td>
+                <button (click)="deleteUsers(user.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

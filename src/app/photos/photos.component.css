@@ -1,0 +1,17 @@
+.parent{
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: white;}
+.child{
+    width: 340px ;
+    display: flex;
+    flex-wrap: nowrap;
+    border: 3px solid;
+    margin-left: 10px;
+    background-image: conic-gradient(red, yellow, green);}
+.details{
+    margin-left: 10px;
+    
+}
