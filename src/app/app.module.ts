@@ -36,6 +36,9 @@ import { CreatevehicleComponent } from './createvehicle/createvehicle.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { CreateaccountComponent } from './createaccount/createaccount.component';
+import { VehicledetailsComponent } from './vehicledetails/vehicledetails.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 
 @NgModule({
@@ -71,6 +74,9 @@ import { CreateaccountComponent } from './createaccount/createaccount.component'
     CreatevehicleComponent,
     CreateuserComponent,
     CreateaccountComponent,
+    VehicledetailsComponent,
+    ParentComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,

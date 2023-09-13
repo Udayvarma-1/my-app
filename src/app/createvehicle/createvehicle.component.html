@@ -18,8 +18,62 @@
             <br><br>
             <label for="">color:</label>
             <input type="text" formControlName="color">
-            <br><br><br>
-            <button class="btn btn-primary" (click)="Submit()">Submit</button>
+            <br><br>
+
+            <div formGroupName="address">
+
+                <label>H.No:</label>
+                <input type="text" formControlName="hno">
+                <br><br>
+                <label>State:</label>
+                <input type="text" formControlName="state">
+                <br><br>
+                <label>Pin:</label>
+                <input type="number" formControlName="pin">
+            </div>
+            <!-- <br><br> -->
+            <label>type1:</label><br>
+            <input type="radio" name="type1" formControlName="type1" value="dayscholor">
+            <label>dayscholor:</label>
+            <input type="radio" name="type1" formControlName="type1" value="residential">
+            <label>residential</label>
+            <br>
+            <div *ngIf="vehicleForm.get('type1')?.value == 'dayscholor'">
+                <label>bus fee:</label>
+                <input type="number" formControlName="busFee">
+                <br>
+            </div>
+
+            <div *ngIf="vehicleForm.get('type1')?.value == 'residential'">
+                <label>hostel Fee:</label>
+                <input type="number" formControlName="hostelFee">
+            </div>
+
+            <button class="btn btn-danger" (click)="addCard()">add Cards</button>
+
+            <div formArrayName="cards">
+                <div *ngFor="let card of cardsFormArray.controls; let i = index">
+                    <div formGroupName="{{i}}">
+                        <label>No:</label>
+                        <input type="number" formControlName="no">
+                        <br>
+                        <label>Exp:</label>
+                        <input type="month" formControlName="exp">
+                        <br>
+                        <label>CVV:</label>
+                        <input type="number" formControlName="cvv">
+                        <br><br>
+                        <button (click)="deletecard(i)">delete</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <button class="btn btn-primary" (click)="Submit()">{{showbutton}}</button>
         </div>
 
     </div>

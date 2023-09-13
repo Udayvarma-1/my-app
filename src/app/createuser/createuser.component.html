@@ -1,24 +1,105 @@
-
-<form [formGroup]="userForm" >
+<form [formGroup]="userForm">
     <div class="parent">
         <div class="child">
             <label>Name:</label>
             <input type="text" formControlName="name">
-            <br><br>
+            <div class="text-danger" *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+                <p *ngIf="userForm.get('name')?.errors?.['required']">Name is required</p>
+                <p *ngIf="userForm.get('name')?.errors?.['minlength']">Name should contain atleast 3 charecters.</p>
+            </div>
+            <br>
             <label>Phone:</label>
             <input type="text" formControlName="phone">
-            <br><br>
+            <div class="text-danger" *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid">
+                <p *ngIf="userForm.get('phone')?.errors?.['required']">Phone is required</p>
+                <p *ngIf="userForm.get('phone')?.errors?.['min']">Phone should contain atleast 10 numbers</p>
+                <p *ngIf="userForm.get('phone')?.errors?.['max']">phone should not be morethen 10 numbers</p>
+            </div>
+            <br>
             <label>City:</label>
             <input type="text" formControlName="city">
-            <br><br>
+            <br>
             <label>Fee:</label>
             <input type="text" formControlName="fee">
-            <br><br>
+            <br>
             <label>ID:</label>
             <input type="text" formControlName="id">
-            <br><br>
+            <br>
+            <div formGroupName="address">
+                <label>H.No:</label>
+                <input type="text" formControlName="hno">
+                <br>
+                <label>State:</label>
+                <input type="text" formControlName="state">
+                <div class="text-danger" *ngIf="userForm.get('address')?.get('state')?.touched && userForm.get('address')?.get('state')?.invalid">
+                    <p *ngIf="userForm.get('address')?.get('state')?.errors?.['required']">state is required</p>
+                </div>
+                <br>
+                <label>Pin:</label>
+                <input type="text" formControlName="pin">
+                <div class="text-danger" *ngIf="userForm.get('address')?.get('pin')?.touched && userForm.get('address')?.get('pin')?.invalid">
+                    <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['required']">pin is required</p>
+                    <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['min']">pin should be min 6 numbers</p>
+                    <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['max']">pin should not be more than 6 numbers</p>
 
+
+
+                </div>
+                <br><br>
+            </div>
+
+            <label >type:</label>
+            <br> 
+            <input type="radio" name="type" formControlName="type" value="dayScholor">
+            <label class="dt">dayScholor</label>
+            <br>
+            <input type="radio" name="type" formControlName="type" value="residential">
+            <label class="re">residential</label>
+            <br>
+
+
+            <div *ngIf="userForm.get('type')?.value == 'dayScholor'">
+                <label>busfee:</label>
+                <input type="number" formControlName="busFee" >
+                <br>
+            </div>
+
+            <div *ngIf="userForm.get('type')?.value == 'residential'">
+                <label>hostel fee:</label>
+                <input type="number" formControlName="hostelFee">
+                <br>
+
+            </div>
+
+
+
+            <button class="btn btn-danger" (click)="addcard()">add Card</button>
+
+            <div formArrayName="cards">
+                <div *ngFor="let card of cardsFormArray.controls ; let i=index">
+                    <div formGroupName="{{i}}">
+                        <label>CARD NO:</label>
+                        <input type="number" formControlName="no">
+                        <br>
+                        <label>EXP:</label>
+                        <input type="month" formControlName="exp">
+                        <br>
+                        <label>CVV:</label>
+                        <input type="number" formControlName="cvv">
+                        <div class="text-danger" *ngIf="cardsFormArray.controls[i]?.get('cvv')?.touched && cardsFormArray.controls[i]?.get('cvv')?.invalid">
+                            <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['required']">CVV Is required</p>
+                            <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['min']">CVV atleast 100</p>
+                            <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['max']">CVV is more then 999</p>
+
+                        </div>
+                        <br><br>
+                        <button (click)="deleteCard(i)">delete</button>
+
+                    </div>
+                </div>
+            </div>
             <button class="btn btn-primary" (click)="Submit()">Submit</button>
+
 
 
         </div>

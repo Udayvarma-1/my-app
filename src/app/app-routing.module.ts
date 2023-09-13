@@ -29,6 +29,9 @@ import { CreateuserComponent } from './createuser/createuser.component';
 import { CreateaccountComponent } from './createaccount/createaccount.component';
 import { authenticationGuard } from './authentication.guard';
 import { notifyGuard } from './notify.guard';
+import { VehicledetailsComponent } from './vehicledetails/vehicledetails.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 
 
@@ -50,6 +53,8 @@ const routes: Routes = [
     {path:'bank',component:BankComponent},
     {path:'users',component:UsersComponent},
     {path:'vehicles',component:VehiclesComponent},
+    {path:'vehicledetails/:id',component:VehicledetailsComponent},
+    {path:'edit-vehicle/:id', component:CreatevehicleComponent},
     {path:'accounts',component:AccountsComponent},
     {path:'practice',component:PracticeComponent},
     {path:'flipkart',component:FlipkartComponent},
@@ -60,6 +65,8 @@ const routes: Routes = [
     {path:'createvehicle',component:CreatevehicleComponent, canDeactivate:[notifyGuard]},
     {path:'createuser',component:CreateuserComponent ,canDeactivate:[notifyGuard]},
     {path:'creataccount',component:CreateaccountComponent, canDeactivate:[notifyGuard]},
+    {path:'parent',component:ParentComponent},
+    {path:'child',component:ChildComponent},
     
     
   ]},
