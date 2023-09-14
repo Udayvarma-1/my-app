@@ -10,9 +10,35 @@ export class ChildComponent {
   public bc:number = 0;
   @Output() public bEvent:EventEmitter<any> = new EventEmitter();
 
-  send(){
-    this.bEvent.emit(this.bc);
-  }
+  // send(){
+  //   this.bEvent.emit(this.bc);
+  // }
+
+  // rating task
+  // @Input() public ud:any = [];
   
+// calculator task
+
+@Input() public number1:number=0;
+@Input() public number2:number=0;
+
+@Output() public cal:EventEmitter<any> = new EventEmitter();
+
+sum(){
+  this.cal.emit(this.number1+this.number2)
+
+}
+sub(){
+  this.cal.emit(this.number1-this.number2)
+}
+mul(){
+  this.cal.emit(this.number1*this.number2)
+}
+
+  
+
+
+
+
 
 }

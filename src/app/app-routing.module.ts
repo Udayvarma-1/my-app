@@ -32,6 +32,9 @@ import { notifyGuard } from './notify.guard';
 import { VehicledetailsComponent } from './vehicledetails/vehicledetails.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { CartComponent } from './cart/cart.component';
+import { ItemComponent } from './item/item.component';
+import { NavComponent } from './nav/nav.component';
 
 
 
@@ -67,6 +70,9 @@ const routes: Routes = [
     {path:'creataccount',component:CreateaccountComponent, canDeactivate:[notifyGuard]},
     {path:'parent',component:ParentComponent},
     {path:'child',component:ChildComponent},
+    {path:'cart',component:CartComponent},
+    {path:'item',component:ItemComponent},
+    {path:'nav',component:NavComponent},
     
     
   ]},

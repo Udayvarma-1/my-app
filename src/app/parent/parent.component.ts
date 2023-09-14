@@ -6,12 +6,32 @@ import { Component, Input, Output } from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent {
-   public ap:number = 0; 
-   public bp:number=0;
+  //  public ap:number = 0; 
+  //  public bp:number=0;
 
-   catch(value:any){
-    this.bp = value;
-   }
+  //  catch(value:any){
+  //   this.bp = value;
+  //  }
+
+  //  rating task
+
+  // @Input() public dc:any = [];
+
+  // calculator task
+  public n1:number=0;
+  public n2:number=0;
+  public result:number=0;
+
+  catch(value:any){
+    this.result = value;
+    
+  }
+
+ 
+
+
+   
+
    
   
 
